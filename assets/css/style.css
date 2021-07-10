@@ -1,0 +1,366 @@
+/* default setting */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+}
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+.row {
+  max-width: 700px;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+}
+/* main */
+/* header */
+.header__nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  background: #fff;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.5rem;
+}
+.menu__toggle {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr auto;
+}
+.header__logo-link {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+.menu_icon {
+  cursor: pointer;
+  padding: 0.5rem 0.8rem;
+  border-radius: 3px;
+  transition: all 0.2s ease-in;
+}
+.menu_icon:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.menu_icon i {
+  font-size: 2rem;
+}
+.menu__nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 22rem;
+  height: 100vh;
+  background: black;
+  display: none;
+  animation: animateright 0.6s ease-in-out;
+}
+.close__nav {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: white;
+  font-size: 1.4rem;
+  padding: 0.3rem 0.5rem;
+}
+.close__nav:hover {
+  cursor: pointer;
+  border: 1px solid white;
+}
+.header__nav-list {
+  margin-top: 5rem;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  place-items: center;
+}
+.header__nav-link {
+  position: relative;
+  font-size: 1.7rem;
+  color: white;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: inline-block;
+}
+/* animate for link */
+.header__nav-link::after {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 0;
+  width: 98%;
+  height: 1px;
+  background: linear-gradient(to right, white, #777);
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in;
+}
+.header__nav-link:hover::after {
+  transform: scaleX(1);
+}
+/* gallery */
+.gallery__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.gallery__list img:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+.move-to {
+  margin: 3rem 0 5rem;
+  text-align: center;
+}
+.move-item {
+  display: inline-block;
+  font-size: 1.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px 15px;
+  color: black;
+}
+.btn-next i,
+.btn-prev i {
+  color: #333;
+  font-size: 12px;
+}
+.move-item:hover,
+.move-item--active {
+  color: #fff;
+  background: #000;
+}
+
+/* aboutme */
+.about-me {
+  background: #333;
+  color: white;
+  padding: 5rem 1.2rem 2rem;
+}
+.about-me__heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+}
+.about-me__info,
+.about-me__skills,
+.about-me__price {
+  border-bottom: 1px solid white;
+  padding-bottom: 3rem;
+  margin-bottom: 4rem;
+}
+.about-me__info-details {
+  line-height: 1.6;
+  margin-top: 2rem;
+}
+.about-me__info-details p {
+  margin-top: 2rem;
+}
+.about-me__subtitle {
+  font-size: 2.1rem;
+  font-weight: normal;
+  margin-bottom: 2rem;
+}
+/* skills */
+.progress__skill {
+  margin-top: 1rem;
+  width: 100%;
+  background: #fff;
+  height: 3rem;
+}
+.progress__bar {
+  background: #777;
+  height: inherit;
+  line-height: 3rem;
+  text-align: center;
+}
+.progress__bar--95 {
+  width: 95%;
+}
+.progress__bar--85 {
+  width: 85%;
+}
+.progress__bar--80 {
+  width: 80%;
+}
+.skill__item {
+  margin-top: 2rem;
+}
+.skill__item p {
+  letter-spacing: 3px;
+  font-size: 15px;
+}
+.btn-download-resume {
+  display: inline-block;
+  text-align: center;
+  margin-top: 2rem;
+  color: black;
+  background: blanchedalmond;
+  padding: 1.5rem 2.5rem;
+}
+.btn-download-resume:hover {
+  color: white;
+  background: #000;
+}
+/* price */
+.about-me__price {
+  border-bottom: 0;
+}
+.price__list {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.price__item {
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.price__item h3 {
+  padding: 2.5rem;
+  background: #000;
+  font-size: 2.5rem;
+  font-weight: normal;
+}
+.price__item p {
+  padding: 2rem;
+  color: black;
+  border-bottom: 1px solid rgb(233, 233, 233);
+}
+.price__item p .price-of-item {
+  display: block;
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.btn-price-item {
+  display: inline-block;
+  font-weight: 600;
+}
+.btn-price-item:hover {
+  color: black;
+}
+/* contact */
+.contact {
+  background: #f1f1f1;
+  padding: 5rem 1.2rem 4rem;
+  line-height: 1.6;
+}
+.contact__heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: 500;
+}
+.contact-form {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+.group-form {
+  display: grid;
+  gap: 5px;
+  grid-template-rows: auto 1fr;
+}
+.group-form label {
+  font-weight: 500;
+}
+.group-form input {
+  height: 3.7rem;
+  border-radius: 3px;
+  padding: 1rem;
+  font-size: 1.6rem;
+  color: #333;
+  outline: none;
+  border: 1px solid rgb(233, 233, 233);
+}
+.btn-contact-form {
+  display: block;
+  background: #000;
+  color: white;
+  text-align: center;
+  padding: 0.8rem;
+}
+.btn-contact-form:hover {
+  background: rgb(43, 100, 206);
+}
+/* footer */
+.footer__top {
+  padding: 4rem 2rem;
+  background: rgb(146, 146, 146);
+  line-height: 1.6;
+}
+.footer__top-title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+}
+.footer__top-list {
+  display: grid;
+  gap: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.blog-tags__item {
+  padding: 1rem;
+  display: grid;
+  gap: 15px;
+  align-items: center;
+  grid-template-columns: 60px 1fr;
+  transition: 0.4s linear all;
+}
+.blog-tags__item:first-child {
+  border-bottom: 1px solid rgb(233, 233, 233);
+}
+.blog-tags__item:hover {
+  background: #000;
+  color: white;
+  border-bottom: transparent;
+}
+.popular-tags__link {
+  display: inline-block;
+  background: rgba(51, 51, 51, 0.301);
+  padding: 0.3rem 0.8rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 1.3rem;
+}
+.popular-tags__link--active {
+  background: #000;
+  font-size: 1.6rem;
+}
+.footer__bottom {
+  background: #000;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+}
+@keyframes animateright {
+  from {
+    right: -300px;
+    opacity: 0;
+  }
+  to {
+    right: 0px;
+    opacity: 1;
+  }
+}
